@@ -4,7 +4,7 @@ class LeerMente {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         final String MENSAJE="Esta aqui? (1:SI/2:NO):";
-        final String tabla1 = """
+        final String TARJETA_1 = """
                 +---------------+
                 | 1 21 41 61 81 |
                 | 3 23 43 63 83 |
@@ -19,7 +19,7 @@ class LeerMente {
                 +---------------+
 
                     """;
-        final String tabla2="""
+        final String TARJETA_2="""
                 +---------------+
                 | 2 22 42 62 82 |
                 | 3 23 43 63 83 |
@@ -33,7 +33,7 @@ class LeerMente {
                 |19 39 59 79 99 |
                 +---------------+
                 """;
-        final String tabla3="""
+        final String TARJETA_3="""
                 +---------------+
                 | 4 22 44 62 84 |
                 | 5 23 45 63 85 |
@@ -47,7 +47,7 @@ class LeerMente {
                 |21 39 61 79    |
                 +---------------+
                 """;
-        final String tabla4="""
+        final String TARJETA_4="""
                 +---------------+
                 | 8 26 44 62 88 |
                 | 9 27 45 63 89 |
@@ -61,7 +61,7 @@ class LeerMente {
                 |25 43 61 79    |
                 +---------------+
                 """;
-        final String tabla5="""
+        final String TARJETA_5="""
                 +---------------+
                 |16 26 52 62 88 |
                 |17 27 53 63 89 |
@@ -75,7 +75,7 @@ class LeerMente {
                 |25 51 61 87    |
                 +---------------+
                 """;
-        final String tabla6="""
+        final String TARJETA_6="""
                 +---------------+
                 |32 42 52 62    |
                 |33 43 53 63    |
@@ -89,7 +89,7 @@ class LeerMente {
                 |41 51 61       |
                 +---------------+
                 """;
-        final String tabla7="""
+        final String TARJETA_7="""
                 +---------------+
                 |64 74 84 94    |
                 |65 75 85 95    |
@@ -106,47 +106,48 @@ class LeerMente {
         int numero=0;
         System.out.println("Piensa un número del 1 al 99");
         System.out.println("TARJETA 1");
-        System.out.println(tabla1);
+        System.out.println(TARJETA_1);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=1;
         }
         System.out.println("TARJETA 2");
-        System.out.println(tabla2);
+        System.out.println(TARJETA_2);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=2;
         }
         System.out.println("TARJETA 3");
-        System.out.println(tabla3);
+        System.out.println(TARJETA_3);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=4;
         }
         System.out.println("TARJETA 4");
-        System.out.println(tabla4);
+        System.out.println(TARJETA_4);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=8;
         }
         System.out.println("TARJETA 5");
-        System.out.println(tabla5);
+        System.out.println(TARJETA_5);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=16;
         }
         System.out.println("TARJETA 6");
-        System.out.println(tabla6);
+        System.out.println(TARJETA_6);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=32;
         }
         System.out.println("TARJETA 7");
-        System.out.println(tabla7);
+        System.out.println(TARJETA_7);
         System.out.print(MENSAJE);
         if (scanner.nextInt()==1){
             numero+=64;
         }
+
         System.out.println("Tu número es: "+numero);
         
     }
