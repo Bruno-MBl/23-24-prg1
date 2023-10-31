@@ -2,14 +2,14 @@ class RetoForIf {
     public static void main(String[] args) {
 
         int dimension = 21;
-        final String LINEA="============";
+        final String LINEA = "============";
         System.out.println("Tabla 1");
         for (int j = 1; j <= dimension; j = j + 1) {
             for (int i = 1; i <= dimension; i = i + 1) {
 
                 if (
                 // El código desde aqui
-                    i==2 && j==2
+                i == 2 && j == 2
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -18,7 +18,7 @@ class RetoForIf {
                 }
             }
             System.out.println();
-            
+
         }
         System.out.println("Tabla 2");
         for (int j = 1; j <= dimension; j = j + 1) {
@@ -26,7 +26,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==2
+                i == 2
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -42,7 +42,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    j==20
+                j == 20
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -58,7 +58,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i>=8&&i<=14
+                i >= 8 && i <= 14
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -74,7 +74,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==j&&i==11
+                i == j && i == 11
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -90,7 +90,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==11||j==11
+                i == 11 || j == 11
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -106,7 +106,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==j
+                i == j
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -122,7 +122,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==dimension-j+1
+                i == dimension - j + 1
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -138,7 +138,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==j||i==dimension-j+1
+                i == j || i == dimension - j + 1
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -154,7 +154,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    true
+                true
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -170,7 +170,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    !(i==11&&j==11)
+                !(i == 11 && j == 11)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -186,7 +186,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    !(i==11||j==11)
+                !(i == 11 || j == 11)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -202,7 +202,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==j-1||j==i-1
+                i == j - 1 || j == i - 1
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -218,7 +218,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    (i==2||i==20)||(j==2||j==20)
+                (i == 2 || i == 20) || (j == 2 || j == 20)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -234,7 +234,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    (i>=2&&i<=5)||(j>=2&&j<=5)
+                (i >= 2 && i <= 5) || (j >= 2 && j <= 5)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -250,7 +250,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    !((i==1||i==21)||(j==1||j==21))
+                !((i == 1 || i == 21) || (j == 1 || j == 21))
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -266,7 +266,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    ((i>=2&&i<=20)&&(j>=2&&j<=20))&&((i==2||i==20)||(j==2||j==20))
+                ((i >= 2 && i <= 20) && (j >= 2 && j <= 20)) && ((i == 2 || i == 20) || (j == 2 || j == 20))
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -282,7 +282,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i<=5&&j<=5
+                i <= 5 && j <= 5
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -298,7 +298,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    (i%2==0&&j%2==0)||(i%2==1&&j%2==1)
+                (i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -314,7 +314,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    i==21||j==21||(i%4==j%4||i%4==3-(j%4))
+                i == 21 || j == 21 || (i % 4 == j % 4 || i % 4 == 3 - (j % 4))
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -330,7 +330,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    (i%4)==3-((j+2)%4)
+                (i % 4) == 3 - ((j + 2) % 4)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
@@ -346,7 +346,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                    Math.pow(i-11, 2)+Math.pow(j-11,2)==25
+                Math.pow(i - 11, 2) + Math.pow(j - 11, 2) == 25
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");

@@ -59,8 +59,8 @@ class Caracol {
                 caido += (Math.random() * 2);
                 profundidad = profundidad + caido;
                 if (profundidad > nivelDeAgua) {
-                profundidad = nivelDeAgua;
-            }
+                    profundidad = nivelDeAgua;
+                }
             }
             System.out.println("Dia [" + dia + "] / Sube: [" + subido + "] / Baja: [" + caido
                     + "] / Altura al final del día: [-" + profundidad + "]");
