@@ -149,6 +149,6 @@ class LeerMente {
         }
 
         System.out.println("Tu número es: "+numero);
-        
+        scanner.close();
     }
 }
