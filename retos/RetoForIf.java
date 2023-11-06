@@ -345,7 +345,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui
-                Math.pow(i - 11, 2) + Math.pow(j - 11, 2) == 25
+                !((int)(Math.sqrt(Math.pow(i - 11, 2) + Math.pow(j - 11, 2)))== 5)
                 // El código hasta aquí
                 ) {
                     System.out.print("(*)");
