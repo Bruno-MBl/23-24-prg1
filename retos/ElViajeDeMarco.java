@@ -80,5 +80,6 @@ class ElViajeDeMarco {
             }
             scanner.nextLine();
         }
+        scanner.close();
     }
 }
