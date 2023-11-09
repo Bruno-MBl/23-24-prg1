@@ -27,15 +27,14 @@ class GuerreroVampiro {
         final int DAÑO_ATAQUE_3 = 20;
 
         final int VIDA_MAXIMA_GUERRERO = 150;
-        boolean guerreroVivo = true;
-        boolean vampiroVivo = true;
+        boolean guerreroVivo;
+        boolean vampiroVivo;
         int vidaGuerrero = VIDA_MAXIMA_GUERRERO;
         int vidaVampiro = 60;
         int turnosDePocion = 0;
-        while (guerreroVivo && vampiroVivo) {
+        do {
             System.out.println("Vida del guerrero: " + vidaGuerrero);
             System.out.println("Vida del vampiro: " + vidaVampiro);
-
             boolean opcionValida = false;
             int ataqueVampiro = 0;
             int ataqueGuerrero = 0;
@@ -134,7 +133,7 @@ class GuerreroVampiro {
             vidaGuerrero -= ataqueVampiro > 0 ? ataqueVampiro : 0;
             guerreroVivo = vidaGuerrero > 0;
             System.out.println("_______________________________________________________________________________");
-        }
+        } while (guerreroVivo && vampiroVivo);
         System.out.println("La batalla ha terminado");
         System.out.println(vampiroVivo ? "El vampiro ha salido victorioso" : "El guerrero ha salido victorioso");
         scanner.close();
