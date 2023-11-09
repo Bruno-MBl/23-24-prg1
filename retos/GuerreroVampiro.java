@@ -6,10 +6,26 @@ class GuerreroVampiro {
         final int PROBABILIDAD_ARMA_1 = 50;
         final int PROBABILIDAD_ARMA_2 = 25;
         final int PROBABILIDAD_ARMA_3 = 12;
+        final int PROBABILIDAD_DEFENDERSE = 80;
+        final int OPCION_ARMA_1 = 1;
+        final int OPCION_ARMA_2 = 2;
+        final int OPCION_ARMA_3 = 3;
+        final int OPCION_DEFENDERSE = 4;
+        final int OPCION_POCION = 5;
+        final int DAÑO_ARMA_1 = 7;
+        final int DAÑO_ARMA_2 = 15;
+        final int DAÑO_ARMA_3 = 30;
+        final int DAÑO_BLOQUEADO = 5;
+
         final int PROBABILIDAD_ATAQUE_1 = 90;
         final int PROBABILIDAD_ATAQUE_2 = 60;
         final int PROBABILIDAD_ATAQUE_3 = 40;
-        final int PROBABILIDAD_DEFENDERSE = 80;
+        final int OPCION_ATAQUE_1 = 1;
+        final int OPCION_ATAQUE_2 = 2;
+        final int DAÑO_ATAQUE_1 = 5;
+        final int DAÑO_ATAQUE_2 = 10;
+        final int DAÑO_ATAQUE_3 = 20;
+
         final int VIDA_MAXIMA_GUERRERO = 150;
         boolean guerreroVivo = true;
         boolean vampiroVivo = true;
@@ -23,10 +39,15 @@ class GuerreroVampiro {
             boolean opcionValida = false;
             int ataqueVampiro = 0;
             int ataqueGuerrero = 0;
+            boolean guerreroDesmayado = vidaGuerrero < 30;
+            boolean vampiroDesmayado = vidaVampiro < 20;
             if (turnosDePocion > 0) {
                 turnosDePocion--;
                 if (turnosDePocion == 0)
                     vidaGuerrero = VIDA_MAXIMA_GUERRERO;
+            } else if (guerreroDesmayado) {
+                System.out.println("Estas desmayado");
+                vidaGuerrero += 2;
             } else {
                 while (!opcionValida) {
                     opcionValida = true;
@@ -42,88 +63,80 @@ class GuerreroVampiro {
                             """);
                     int opcion = scanner.nextInt();
                     double probabilidadExito = Math.random() * 100;
-                    if ((opcion == 1 || opcion == 2 || opcion == 3) && vidaGuerrero < 30)
-                        System.out.println("Estas demasiado debil y fallas el ataque");
-                    else {
-                        if (opcion == 1) {
-                            System.out.println("Atacas con la daga");
-                            if (PROBABILIDAD_ARMA_1 > probabilidadExito) {
-                                System.out.println("El vampiro recibe el golpe");
-                                ataqueGuerrero = 7;
-                            } else
-                                System.out.println("Fallaste el ataque");
-                        } else if (opcion == 2) {
-                            System.out.println("Atacas con la espada");
-                            if (PROBABILIDAD_ARMA_2 > probabilidadExito) {
-                                System.out.println("El vampiro recibe el golpe");
-                                ataqueGuerrero = 15;
-                            } else
-                                System.out.println("Fallaste el ataque");
-                        } else if (opcion == 3) {
-                            System.out.println("Atacas con el hacha");
-                            if (PROBABILIDAD_ARMA_3 > probabilidadExito) {
-                                System.out.println("El vampiro recibe el golpe");
-                                ataqueGuerrero = 30;
-                            } else
-                                System.out.println("Fallaste el ataque");
-                        } else if (opcion == 4) {
-                            System.out.println("Decides bloquear el ataque");
-                            if (PROBABILIDAD_DEFENDERSE > probabilidadExito) {
-                                System.out.println("Bloqueas con exito");
-                                ataqueVampiro -= 5;
-                            } else
-                                System.out.println("Fallaste el bloqueo");
-                        } else if (opcion == 5) {
-                            System.out.println("Decides tomarte una pocion");
-                            turnosDePocion = 3;
-                        } else {
-                            System.out.println("Esa no es una accion valida");
-                            opcionValida = false;
-                        }
+                    if (opcion == OPCION_ARMA_1) {
+                        System.out.println("Atacas con la daga");
+                        if (PROBABILIDAD_ARMA_1 > probabilidadExito) {
+                            System.out.println("El vampiro recibe el golpe");
+                            ataqueGuerrero = DAÑO_ARMA_1;
+                        } else
+                            System.out.println("Fallaste el ataque");
+                    } else if (opcion == OPCION_ARMA_2) {
+                        System.out.println("Atacas con la espada");
+                        if (PROBABILIDAD_ARMA_2 > probabilidadExito) {
+                            System.out.println("El vampiro recibe el golpe");
+                            ataqueGuerrero = DAÑO_ARMA_2;
+                        } else
+                            System.out.println("Fallaste el ataque");
+                    } else if (opcion == OPCION_ARMA_3) {
+                        System.out.println("Atacas con el hacha");
+                        if (PROBABILIDAD_ARMA_3 > probabilidadExito) {
+                            System.out.println("El vampiro recibe el golpe");
+                            ataqueGuerrero = DAÑO_ARMA_3;
+                        } else
+                            System.out.println("Fallaste el ataque");
+                    } else if (opcion == OPCION_DEFENDERSE) {
+                        System.out.println("Decides bloquear el ataque");
+                        if (PROBABILIDAD_DEFENDERSE > probabilidadExito) {
+                            System.out.println("Bloqueas con exito");
+                            ataqueVampiro -= DAÑO_BLOQUEADO;
+                        } else
+                            System.out.println("Fallaste el bloqueo");
+                    } else if (opcion == OPCION_POCION) {
+                        System.out.println("Decides tomarte una pocion");
+                        turnosDePocion = 3;
+                    } else {
+                        System.out.println("Esa no es una accion valida");
+                        opcionValida = false;
                     }
                 }
             }
-            if (vidaVampiro < 20)
-                System.out.println("El vampiro esta muy debil y falla el ataque");
-            else {
-                System.out.println("El vampiro ataca");
-                int ataque = (int) (Math.random() * 3) + 1;
-                double probabilidadExito = Math.random() * 100;
-                if (ataque == 1) {
-                    if (PROBABILIDAD_ATAQUE_1 > probabilidadExito) {
-                        System.out.println("El vampiro te araña haciendote 5 de daño");
-                        ataqueVampiro += 5;
-                    } else
-                        System.out.println("El vampiro falla su ataque");
-                } else if (ataque == 2) {
-                    if (PROBABILIDAD_ATAQUE_2 > probabilidadExito) {
-                        System.out.println("El vampiro te golpea haciendote 10 de daño");
-                        ataqueVampiro += 10;
-                    } else
-                        System.out.println("El vampiro falla su ataque");
+            vidaVampiro -= ataqueGuerrero;
+            vampiroVivo = vidaVampiro > 0;
+            if (vampiroVivo) {
+                if (vampiroDesmayado) {
+                    System.out.println("El vampiro esta desmayado");
+                    vidaVampiro += 2;
                 } else {
-                    if (PROBABILIDAD_ATAQUE_3 > probabilidadExito) {
-                        System.out.println("El vampiro te muerde haciendote 20 de daño");
-                        ataqueVampiro += 20;
-                    } else
-                        System.out.println("El vampiro falla su ataque");
+                    System.out.println("El vampiro ataca");
+                    int ataque = (int) (Math.random() * 3) + 1;
+                    double probabilidadExito = Math.random() * 100;
+                    if (ataque == OPCION_ATAQUE_1) {
+                        if (PROBABILIDAD_ATAQUE_1 > probabilidadExito) {
+                            System.out.println("El vampiro te araña haciendote 5 de daño");
+                            ataqueVampiro += DAÑO_ATAQUE_1;
+                        } else
+                            System.out.println("El vampiro falla su ataque");
+                    } else if (ataque == OPCION_ATAQUE_2) {
+                        if (PROBABILIDAD_ATAQUE_2 > probabilidadExito) {
+                            System.out.println("El vampiro te golpea haciendote 10 de daño");
+                            ataqueVampiro += DAÑO_ATAQUE_2;
+                        } else
+                            System.out.println("El vampiro falla su ataque");
+                    } else {
+                        if (PROBABILIDAD_ATAQUE_3 > probabilidadExito) {
+                            System.out.println("El vampiro te muerde haciendote 20 de daño");
+                            ataqueVampiro += DAÑO_ATAQUE_3;
+                        } else
+                            System.out.println("El vampiro falla su ataque");
+                    }
                 }
             }
             vidaGuerrero -= ataqueVampiro > 0 ? ataqueVampiro : 0;
-            vidaVampiro -= ataqueGuerrero;
-            vampiroVivo = vidaVampiro > 0;
             guerreroVivo = vidaGuerrero > 0;
-            if (vidaGuerrero < 30)
-                vidaGuerrero += 2;
-            if (vidaVampiro < 20)
-                vidaVampiro += 2;
             System.out.println("_______________________________________________________________________________");
         }
         System.out.println("La batalla ha terminado");
-        if (vampiroVivo)
-            System.out.println("El vampiro ha salido victorioso");
-        else
-            System.out.println("El guerrero ha salido victorioso");
+        System.out.println(vampiroVivo ? "El vampiro ha salido victorioso" : "El guerrero ha salido victorioso");
         scanner.close();
     }
 }
