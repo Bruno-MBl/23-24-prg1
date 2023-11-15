@@ -141,13 +141,13 @@ class ElViajeDeMarcoMetodos {
             System.out.println("~".repeat(40));
             System.out.println(MARCO_CORRE);
         }
-        if (distancia > 0 && distancia < 355) {
-            System.out.println("█".repeat(40 - (int) (distancia / 9)) + "░".repeat((int) (distancia / 9))
+        if (distancia > 0 && distancia < 340) {
+            System.out.println("[#]".repeat(30 - (int) (distancia / 11)) + "[ ]".repeat((int) (distancia / 11))
                     + " " + (int) distancia + "km");
         } else if (distancia < 0) {
-            System.out.println("█".repeat(40) + " 0 km");
+            System.out.println("[#]".repeat(30) + " 0 km");
         } else {
-            System.out.println("░".repeat(40) + " " + (int) distancia + " km");
+            System.out.println("[ ]".repeat(30) + " " + (int) distancia + " km");
         }
     }
 
