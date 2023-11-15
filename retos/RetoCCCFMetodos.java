@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class RetoCCCFMetodos {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         final int HORAS_JORNADA = 12;
         final int PROBABILIDAD_CLIENTE = 60;
         final int MINIMO_ITEMS = 5;
@@ -115,7 +115,7 @@ class RetoCCCFMetodos {
 
     public static void imprimirCajas(int cargaCaja1, int cargaCaja2, int cargaCaja3, int cargaCaja4, int cargaCaja5,
             int cola, int minuto) {
-        System.out.println("Minuto: "+minuto);
+        System.out.println("Minuto: " + minuto);
         System.out.println("Cola: " + "[#]".repeat(cola));
         System.out.println("-".repeat(30));
         System.out.println("Caja 1: " + "[#]".repeat(cargaCaja1));
